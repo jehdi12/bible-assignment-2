@@ -1,0 +1,35 @@
+package myPack;
+
+
+public class DiscipleSimulation {
+public static void main(String[] args) {
+int totalPopulation = 0;
+int malePopulation = 0;
+int femalePopulation = 0;
+int disciples = 13;
+int ageToStartTraining = 18;
+int ageToHaveBaby = 30;
+int averageLifeExpectancy = 72;
+
+totalPopulation = malePopulation = femalePopulation = disciples * 2;
+int years = 0;
+while (disciples < totalPopulation) {
+
+if (years >= ageToStartTraining) {
+int newDisciples = disciples / 2; 
+totalPopulation += newDisciples;
+}
+
+if (years % (ageToHaveBaby - averageLifeExpectancy) == 0) {
+int newBabies = totalPopulation / 2; 
+totalPopulation += newBabies;
+malePopulation += newBabies / 2;
+femalePopulation += newBabies / 2;
+}
+
+years++;
+}
+
+System.out.println("It takes " + years + " years for " + disciples + " disciples to make every human in the world become disciples of Jesus.");
+}
+}
